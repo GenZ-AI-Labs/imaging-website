@@ -94,7 +94,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <div>© {new Date().getFullYear()} ImagingInsight AI Pvt Ltd. All rights reserved.</div>
-          <div className="font-mono">Made in usa 🇮🇳 · Built for the world</div>
+          <div className="font-mono">Made in don 🇮🇳 · Built for the world</div>
         </div>
       </div>
     </footer>
