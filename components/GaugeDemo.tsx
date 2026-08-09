@@ -15,10 +15,10 @@ const PANELS = [
 
 const tierStyle = (c: string) =>
   c === 'green'
-    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+    ? 'bg-emerald-500/10 text-emerald-700 border-emerald-500/30'
     : c === 'amber'
-    ? 'bg-amber-500/10 text-amber-400 border-amber-500/30'
-    : 'bg-red-500/10 text-red-400 border-red-500/30';
+    ? 'bg-amber-500/10 text-amber-700 border-amber-500/30'
+    : 'bg-red-500/10 text-red-600 border-red-500/30';
 
 export function GaugeDemo() {
   const [score, setScore] = useState(86);
@@ -31,10 +31,10 @@ export function GaugeDemo() {
       <div className="container-x">
         <div className="max-w-2xl mb-14">
           <div className="eyebrow mb-5">Live Demo</div>
-          <h2 className="h-display text-4xl md:text-5xl text-white">
+          <h2 className="h-display text-4xl md:text-5xl text-navy-900">
             See how the <span className="text-gradient">Risk Gauge</span> works.
           </h2>
-          <p className="mt-5 text-slate-400">
+          <p className="mt-5 text-slate-600">
             Drag the slider to simulate a genomic risk score. This is the same gauge used at the top of every
             Radiogenomes AI report.
           </p>
@@ -89,7 +89,7 @@ export function GaugeDemo() {
                   key={score}
                   initial={{ scale: 0.95 }}
                   animate={{ scale: 1 }}
-                  className="font-mono text-6xl font-bold text-white"
+                  className="font-mono text-6xl font-bold text-navy-900"
                 >
                   {score}
                 </motion.div>
@@ -127,7 +127,7 @@ export function GaugeDemo() {
 
           {/* Panels */}
           <div>
-            <div className="text-xs uppercase tracking-widest text-slate-400 mb-4">
+            <div className="text-xs uppercase tracking-widest text-slate-600 mb-4">
               Risk Scorecards · 8 Panels
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -140,7 +140,7 @@ export function GaugeDemo() {
                   transition={{ delay: i * 0.05 }}
                   className="glass rounded-xl p-4 flex items-center justify-between"
                 >
-                  <span className="text-sm text-white font-medium">{p.name}</span>
+                  <span className="text-sm text-navy-900 font-medium">{p.name}</span>
                   <span
                     className={`text-[10px] font-bold tracking-wider px-2 py-1 rounded border ${tierStyle(
                       p.color

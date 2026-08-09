@@ -28,11 +28,11 @@ export function IndiaFirst() {
       <div className="container-x relative">
         <div className="text-center max-w-3xl mx-auto">
           <div className="eyebrow mb-5">🇮🇳 Category Creator</div>
-          <h2 className="h-display text-4xl md:text-6xl text-white leading-tight">
+          <h2 className="h-display text-4xl md:text-6xl text-navy-900 leading-tight">
             India's First.{' '}
             <span className="text-gradient">Built for Indian Genomes.</span>
           </h2>
-          <p className="mt-6 text-slate-300 text-lg">
+          <p className="mt-6 text-slate-600 text-lg">
             Generic genomics tools were trained on Western populations. We weren't. Radiogenomes AI is the
             first Indian platform that decodes Indian genomes with AI accuracy — and the world's research
             community can use it too.
@@ -52,12 +52,12 @@ export function IndiaFirst() {
                 className="glass rounded-3xl p-8 hover:border-teal-400/50 transition-all hover:-translate-y-1 group"
               >
                 <div className="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 transition-colors">
-                  <Icon size={22} className="text-teal-300" />
+                  <Icon size={22} className="text-teal-700" />
                 </div>
-                <h3 className="font-display text-xl text-white font-semibold">
+                <h3 className="font-display text-xl text-navy-900 font-semibold">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-slate-400 text-sm leading-relaxed">{p.desc}</p>
+                <p className="mt-3 text-slate-600 text-sm leading-relaxed">{p.desc}</p>
               </motion.div>
             );
           })}

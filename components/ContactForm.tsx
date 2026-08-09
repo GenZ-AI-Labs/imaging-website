@@ -78,7 +78,7 @@ export function ContactForm() {
   }
 
   const inputClass = (field: string) =>
-    `w-full bg-white/[0.04] border ${errors[field] ? 'border-red-500/60' : 'border-white/10'} rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-teal-400/60 focus:ring-1 focus:ring-teal-400/30 transition-colors`;
+    `w-full bg-white border ${errors[field] ? 'border-red-500/60' : 'border-slate-200'} rounded-xl px-4 py-3 text-sm text-navy-900 placeholder:text-slate-500 focus:outline-none focus:border-teal-400/60 focus:ring-1 focus:ring-teal-400/30 transition-colors`;
 
   return (
     <section id="contact" className="py-28 relative overflow-hidden">
@@ -90,7 +90,7 @@ export function ContactForm() {
           className="relative rounded-[2rem] overflow-hidden border border-teal-500/30"
         >
           <div className="absolute inset-0 bg-rainbow-gradient opacity-20" />
-          <div className="absolute inset-0 bg-navy-950/80 backdrop-blur-3xl" />
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-3xl" />
           <div className="absolute inset-0 grid-bg opacity-50" />
 
           <div className="relative px-8 md:px-16 py-20">
@@ -98,17 +98,17 @@ export function ContactForm() {
               {/* Left: copy */}
               <div>
                 <div className="eyebrow mb-6">Limited Early Access</div>
-                <h2 className="h-display text-4xl md:text-5xl text-white leading-tight">
+                <h2 className="h-display text-4xl md:text-5xl text-navy-900 leading-tight">
                   Be among the first to deploy{' '}
                   <span className="text-gradient">India's genomic AI</span>.
                 </h2>
-                <p className="mt-6 text-slate-300">
+                <p className="mt-6 text-slate-600">
                   Request a demo or talk to our scientific team. We'll walk you through the platform, the
                   reports, and how to integrate it with your workflow.
                 </p>
-                <div className="mt-8 text-sm text-slate-400">
+                <div className="mt-8 text-sm text-slate-600">
                   Or email us directly at{' '}
-                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-teal-300 hover:underline">
+                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-teal-700 hover:underline">
                     {SITE_CONFIG.email}
                   </a>
                 </div>
@@ -122,11 +122,11 @@ export function ContactForm() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="glass rounded-2xl p-10 text-center"
                   >
-                    <CheckCircle2 size={48} className="text-teal-400 mx-auto mb-4" />
-                    <h3 className="font-display text-xl text-white font-semibold">
+                    <CheckCircle2 size={48} className="text-teal-700 mx-auto mb-4" />
+                    <h3 className="font-display text-xl text-navy-900 font-semibold">
                       Thank you!
                     </h3>
-                    <p className="mt-2 text-slate-400 text-sm">
+                    <p className="mt-2 text-slate-600 text-sm">
                       Your message has been sent successfully. Our team will get back to you within 24 hours.
                     </p>
                     <button
@@ -150,8 +150,8 @@ export function ContactForm() {
                     />
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="cf-name" className="block text-xs text-slate-400 mb-1.5">
-                          Full Name <span className="text-red-400">*</span>
+                        <label htmlFor="cf-name" className="block text-xs text-slate-600 mb-1.5">
+                          Full Name <span className="text-red-600">*</span>
                         </label>
                         <input
                           id="cf-name"
@@ -162,14 +162,14 @@ export function ContactForm() {
                           className={inputClass('name')}
                         />
                         {errors.name && (
-                          <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
+                          <p className="mt-1 text-xs text-red-600 flex items-center gap-1">
                             <AlertCircle size={12} /> {errors.name}
                           </p>
                         )}
                       </div>
                       <div>
-                        <label htmlFor="cf-email" className="block text-xs text-slate-400 mb-1.5">
-                          Work Email <span className="text-red-400">*</span>
+                        <label htmlFor="cf-email" className="block text-xs text-slate-600 mb-1.5">
+                          Work Email <span className="text-red-600">*</span>
                         </label>
                         <input
                           id="cf-email"
@@ -180,7 +180,7 @@ export function ContactForm() {
                           className={inputClass('email')}
                         />
                         {errors.email && (
-                          <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
+                          <p className="mt-1 text-xs text-red-600 flex items-center gap-1">
                             <AlertCircle size={12} /> {errors.email}
                           </p>
                         )}
@@ -188,8 +188,8 @@ export function ContactForm() {
                     </div>
 
                     <div>
-                      <label htmlFor="cf-message" className="block text-xs text-slate-400 mb-1.5">
-                        Message <span className="text-red-400">*</span>
+                      <label htmlFor="cf-message" className="block text-xs text-slate-600 mb-1.5">
+                        Message <span className="text-red-600">*</span>
                       </label>
                       <textarea
                         id="cf-message"
@@ -200,14 +200,14 @@ export function ContactForm() {
                         className={inputClass('message') + ' resize-none'}
                       />
                       {errors.message && (
-                        <p className="mt-1 text-xs text-red-400 flex items-center gap-1">
+                        <p className="mt-1 text-xs text-red-600 flex items-center gap-1">
                           <AlertCircle size={12} /> {errors.message}
                         </p>
                       )}
                     </div>
 
                     {state === 'error' && errorMsg && (
-                      <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-3 text-xs text-red-300 flex items-start gap-2">
+                      <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-3 text-xs text-red-700 flex items-start gap-2">
                         <AlertCircle size={14} className="mt-0.5 shrink-0" />
                         <span>{errorMsg}</span>
                       </div>

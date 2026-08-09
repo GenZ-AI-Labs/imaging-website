@@ -31,7 +31,7 @@ export function Personas() {
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="eyebrow mb-5">Who It's For</div>
-          <h2 className="h-display text-4xl md:text-5xl text-white">
+          <h2 className="h-display text-4xl md:text-5xl text-navy-900">
             Built for the <span className="text-gradient">people decoding life</span>.
           </h2>
         </div>
@@ -49,12 +49,12 @@ export function Personas() {
                 className="glass rounded-2xl p-6 hover:border-teal-400/40 hover:-translate-y-1 transition-all"
               >
                 <div className="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center mb-4">
-                  <Icon size={20} className="text-teal-300" />
+                  <Icon size={20} className="text-teal-700" />
                 </div>
-                <h3 className="font-display text-lg text-white font-semibold">
+                <h3 className="font-display text-lg text-navy-900 font-semibold">
                   {p.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{p.desc}</p>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{p.desc}</p>
               </motion.div>
             );
           })}

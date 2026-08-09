@@ -5,6 +5,10 @@ out
 .DS_Store
 *.log
 
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
 # Private — never deploy
 _private_reports/
 Blue and White Modern Medical Healthcare Flyer.pdf

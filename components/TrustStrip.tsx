@@ -54,7 +54,7 @@ export function TrustStrip() {
               <div className="text-3xl md:text-4xl font-bold text-gradient">
                 <Counter to={s.value} suffix={s.suffix} />
               </div>
-              <div className="mt-2 text-xs uppercase tracking-widest text-slate-400">
+              <div className="mt-2 text-xs uppercase tracking-widest text-slate-600">
                 {s.label}
               </div>
             </motion.div>

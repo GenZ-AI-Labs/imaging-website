@@ -3,6 +3,17 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import type { TeamMember } from '@/lib/team';
 
+/** "Dr. Smita Sankaye Kachewar" → "SK"; "Biswajeet" → "B". Titles are skipped. */
+function initialsOf(name: string) {
+  const parts = name
+    .split(/\s+/)
+    .filter((p) => !/^(dr\.?|prof\.?|mr\.?|mrs\.?|ms\.?)$/i.test(p))
+    .filter(Boolean);
+  if (parts.length === 0) return '?';
+  if (parts.length === 1) return parts[0][0].toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
 export function TeamCard({ member, index }: { member: TeamMember; index: number }) {
   return (
     <motion.div
@@ -20,38 +31,50 @@ export function TeamCard({ member, index }: { member: TeamMember; index: number 
         <div className="relative w-32 h-32 md:w-36 md:h-36 mx-auto mb-5">
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-400/30 to-cyan-400/30 blur-xl group-hover:blur-2xl transition-all" />
           <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-teal-400/40 group-hover:border-teal-400/80 transition-colors">
-            <Image
-              src={member.photo}
-              alt={member.name}
-              fill
-              className="object-cover"
-              sizes="144px"
-            />
+            {member.photo ? (
+              <Image
+                src={member.photo}
+                alt={member.name}
+                fill
+                className="object-cover"
+                sizes="144px"
+              />
+            ) : (
+              /* No photograph on file — initials avatar keeps the grid even. */
+              <div
+                className="w-full h-full flex items-center justify-center bg-gradient-to-br from-teal-500/15 to-cyan-500/10"
+                aria-hidden="true"
+              >
+                <span className="font-display text-3xl md:text-4xl font-bold text-teal-700/70 tracking-wide">
+                  {initialsOf(member.name)}
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
         {/* Name */}
-        <h3 className="font-display text-xl text-white font-semibold text-center leading-tight">
+        <h3 className="font-display text-xl text-navy-900 font-semibold text-center leading-tight">
           {member.name}
         </h3>
 
         {/* Role */}
         <div className="mt-2 text-center">
-          <span className="inline-block text-xs uppercase tracking-widest font-semibold text-teal-300 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30">
+          <span className="inline-block text-xs uppercase tracking-widest font-semibold text-teal-700 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30">
             {member.role}
           </span>
         </div>
 
         {/* Qualifications */}
         {member.qualifications && (
-          <p className="mt-3 text-xs text-teal-400/80 font-mono text-center leading-relaxed">
+          <p className="mt-3 text-xs text-teal-700/80 font-mono text-center leading-relaxed">
             {member.qualifications}
           </p>
         )}
 
         {/* Bio */}
         {member.bio && (
-          <p className="mt-4 text-sm text-slate-400 leading-relaxed text-center">
+          <p className="mt-4 text-sm text-slate-600 leading-relaxed text-center">
             {member.bio}
           </p>
         )}

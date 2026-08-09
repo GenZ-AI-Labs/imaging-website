@@ -14,32 +14,32 @@ export function About() {
             viewport={{ once: true }}
           >
             <div className="eyebrow mb-5">The Company</div>
-            <h2 className="h-display text-4xl md:text-5xl text-white leading-tight">
+            <h2 className="h-display text-4xl md:text-5xl text-navy-900 leading-tight">
               By <span className="text-gradient">ImagingInsight AI</span>.<br />
               Engineered in India.
             </h2>
-            <p className="mt-6 text-slate-300 leading-relaxed">
+            <p className="mt-6 text-slate-600 leading-relaxed">
               ImagingInsight AI Pvt Ltd is a deep-tech health AI company building the next generation of
-              intelligent diagnostic and genomic platforms. <strong className="text-white">Radiogenomes AI™</strong>{' '}
+              intelligent diagnostic and genomic platforms. <strong className="text-navy-900">Radiogenomes AI™</strong>{' '}
               is our flagship — the first Indian platform delivering AI-powered genomic intelligence at clinical scale,
               designed to support hospitals, clinicians, and research partners.
             </p>
-            <p className="mt-4 text-slate-400">
+            <p className="mt-4 text-slate-600">
               We believe Indian genomes deserve Indian-built tools — and that the world's research
               community will benefit when those tools are world-class.
             </p>
 
             <div className="mt-8 grid grid-cols-3 gap-4">
               <div>
-                <div className="font-mono text-2xl text-teal-300 font-bold">17</div>
+                <div className="font-mono text-2xl text-teal-700 font-bold">17</div>
                 <div className="text-xs uppercase tracking-widest text-slate-500">Reports</div>
               </div>
               <div>
-                <div className="font-mono text-2xl text-teal-300 font-bold">3</div>
+                <div className="font-mono text-2xl text-teal-700 font-bold">3</div>
                 <div className="text-xs uppercase tracking-widest text-slate-500">Senior Doctors</div>
               </div>
               <div>
-                <div className="font-mono text-2xl text-teal-300 font-bold">1st</div>
+                <div className="font-mono text-2xl text-teal-700 font-bold">1st</div>
                 <div className="text-xs uppercase tracking-widest text-slate-500">In India</div>
               </div>
             </div>
@@ -81,10 +81,10 @@ export function About() {
                   />
                 </div>
                 <div className="text-left leading-tight">
-                  <div className="text-[10px] uppercase tracking-widest text-slate-400">
+                  <div className="text-[10px] uppercase tracking-widest text-slate-600">
                     Parent Company
                   </div>
-                  <div className="font-display font-semibold text-white text-sm">
+                  <div className="font-display font-semibold text-navy-900 text-sm">
                     ImagingInsight AI Pvt Ltd
                   </div>
                 </div>

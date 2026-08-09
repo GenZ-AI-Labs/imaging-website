@@ -4,7 +4,8 @@ export interface TeamMember {
   role: string;
   qualifications?: string;
   bio?: string;
-  photo: string;
+  /** Omit to render an initials avatar instead of a photograph. */
+  photo?: string;
   group: 'leadership' | 'operations';
 }
 
@@ -37,6 +38,24 @@ export const TEAM: TeamMember[] = [
     group: 'leadership',
   },
   {
+    id: 'vinod',
+    name: 'Vinod',
+    role: 'Director — Business Development',
+    qualifications: '',
+    bio: 'Leads business development and client relationships at ImagingInsight AI — opening partnerships with hospitals, diagnostic centres and labs, and staying close to clients well past onboarding.',
+    photo: '/team/vinod.jpeg',
+    group: 'leadership',
+  },
+  {
+    id: 'biswajit-behera',
+    name: 'Biswajit Behera',
+    role: 'Sales Director',
+    qualifications: '',
+    bio: 'Heads sales at ImagingInsight AI — taking Radiogenomes AI and our teleradiology reporting services to hospitals, diagnostic centres and channel partners across India.',
+    // No photo on file — the card renders an initials avatar instead.
+    group: 'leadership',
+  },
+  {
     id: 'swapnali-borade',
     name: 'Dr. Swapnali Borade',
     role: 'Partner & Chief Clinical Advisor',
@@ -46,21 +65,30 @@ export const TEAM: TeamMember[] = [
     group: 'leadership',
   },
   {
-    id: 'faiyyaz-hangad',
-    name: 'Faiyyaz Hangad',
-    role: 'Senior AI/ML Engineer',
-    qualifications: '',
-    bio: 'Building the AI engine and software platform that powers Radiogenomes AI — from intelligent processing to clinical-grade report generation.',
-    photo: '/team/faiyyaz-hangad.webp',
-    group: 'operations',
-  },
-  {
     id: 'nutika-bandekar',
     name: 'Nutika Bandekar',
     role: 'Operations Manager',
     qualifications: '',
     bio: 'Leading day-to-day operations, client coordination, and ensuring smooth report delivery across all partner hospitals and labs.',
     photo: '/team/nutika-bandekar.webp',
+    group: 'operations',
+  },
+  {
+    id: 'aasiya-shaikh',
+    name: 'Aasiya Shaikh',
+    role: 'Tech Support Head',
+    qualifications: '',
+    bio: 'Leading technical support — handling partner queries, connectivity issues, and keeping platform uptime steady for every client.',
+    photo: '/team/aasiya-shaikh.jpeg',
+    group: 'operations',
+  },
+  {
+    id: 'sahil-diwan',
+    name: 'Sahil Diwan',
+    role: 'Deployment Head',
+    qualifications: '',
+    bio: 'Heading deployment — taking the platform live at partner sites, from onboarding and integration through to handover.',
+    photo: '/team/sahil-diwan.jpeg',
     group: 'operations',
   },
 ];

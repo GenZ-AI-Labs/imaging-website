@@ -42,23 +42,23 @@ export function WhatsAppButton() {
                 initial={{ opacity: 0, x: 10, scale: 0.9 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: 10, scale: 0.9 }}
-                className="relative mb-1 max-w-[220px] rounded-2xl bg-navy-900 border border-teal-500/30 px-4 py-3 shadow-xl"
+                className="relative mb-1 max-w-[220px] rounded-2xl bg-white border border-slate-200 px-4 py-3 shadow-[0_12px_32px_-12px_rgba(15,23,42,0.28)]"
               >
                 <button
                   onClick={() => setTooltipOpen(false)}
-                  className="absolute -top-2 -left-2 w-5 h-5 rounded-full bg-navy-800 border border-white/10 flex items-center justify-center hover:bg-navy-700"
+                  className="absolute -top-2 -left-2 w-5 h-5 rounded-full bg-white border border-slate-300 flex items-center justify-center hover:bg-slate-100"
                   aria-label="Close tooltip"
                 >
-                  <X size={11} className="text-slate-400" />
+                  <X size={11} className="text-slate-500" />
                 </button>
-                <div className="text-xs text-white font-medium leading-snug">
+                <div className="text-xs text-navy-900 font-medium leading-snug">
                   Need help? Chat with us on WhatsApp
                 </div>
-                <div className="mt-1 text-[10px] text-slate-400">
+                <div className="mt-1 text-[10px] text-slate-500">
                   We typically reply within minutes.
                 </div>
                 {/* Pointer */}
-                <div className="absolute -right-1.5 bottom-4 w-3 h-3 rotate-45 bg-navy-900 border-r border-b border-teal-500/30" />
+                <div className="absolute -right-1.5 bottom-4 w-3 h-3 rotate-45 bg-white border-r border-b border-slate-200" />
               </motion.div>
             )}
           </AnimatePresence>

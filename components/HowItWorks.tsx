@@ -39,10 +39,10 @@ export function HowItWorks() {
       <div className="container-x">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="eyebrow mb-5 mx-auto">How It Works</div>
-          <h2 className="h-display text-4xl md:text-5xl text-white">
+          <h2 className="h-display text-4xl md:text-5xl text-navy-900">
             From blood sample to <span className="text-gradient">clinical insight</span>.
           </h2>
-          <p className="mt-5 text-slate-400">
+          <p className="mt-5 text-slate-600">
             Every Radiogenomes AI report follows a rigorous 4-step pipeline — AI-generated, doctor-verified, ready for clinical use.
           </p>
         </div>
@@ -64,16 +64,16 @@ export function HowItWorks() {
                   className="relative"
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-24 h-24 rounded-full bg-navy-900 border border-teal-500/40 flex items-center justify-center relative">
-                      <Icon size={32} className="text-teal-300" />
+                    <div className="w-24 h-24 rounded-full bg-slate-50 border border-teal-500/40 flex items-center justify-center relative">
+                      <Icon size={32} className="text-teal-700" />
                       <div className="absolute inset-0 rounded-full border border-teal-400/20 animate-ping" />
                     </div>
-                    <div className="font-mono text-xs text-teal-400 mt-4">STEP {s.n}</div>
-                    <h3 className="font-display text-xl text-white font-semibold mt-2">
+                    <div className="font-mono text-xs text-teal-700 mt-4">STEP {s.n}</div>
+                    <h3 className="font-display text-xl text-navy-900 font-semibold mt-2">
                       {s.title}
                     </h3>
-                    <p className="mt-3 text-slate-400 text-sm max-w-xs">{s.desc}</p>
-                    <span className="mt-4 text-[10px] font-mono px-2 py-1 rounded-md bg-teal-500/10 border border-teal-500/30 text-teal-300">
+                    <p className="mt-3 text-slate-600 text-sm max-w-xs">{s.desc}</p>
+                    <span className="mt-4 text-[10px] font-mono px-2 py-1 rounded-md bg-teal-500/10 border border-teal-500/30 text-teal-700">
                       {s.chip}
                     </span>
                   </div>

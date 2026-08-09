@@ -24,10 +24,10 @@ export default function TeamPage() {
         <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
         <div className="container-x text-center max-w-3xl mx-auto relative">
           <div className="eyebrow mb-5 mx-auto">The People Behind Radiogenomes AI</div>
-          <h1 className="h-display text-4xl md:text-6xl text-white leading-tight">
+          <h1 className="h-display text-4xl md:text-6xl text-navy-900 leading-tight">
             Built by <span className="text-gradient">doctors, researchers & engineers</span>.
           </h1>
-          <p className="mt-6 text-slate-300 text-lg">
+          <p className="mt-6 text-slate-600 text-lg">
             Radiogenomes AI is the product of a unique partnership — top Indian clinicians
             and AI engineers working together to deliver clinical-grade genomic intelligence.
           </p>
@@ -38,13 +38,13 @@ export default function TeamPage() {
       <section className="py-16 relative">
         <div className="container-x">
           <div className="text-center mb-14">
-            <div className="text-xs uppercase tracking-widest text-teal-400 font-mono mb-3">
+            <div className="text-xs uppercase tracking-widest text-teal-700 font-mono mb-3">
               Leadership & Medical Advisory
             </div>
-            <h2 className="h-display text-3xl md:text-4xl text-white">
+            <h2 className="h-display text-3xl md:text-4xl text-navy-900">
               Our <span className="text-gradient">Founders</span>
             </h2>
-            <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm">
+            <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-sm">
               Every Radiogenomes AI report is clinically reviewed and approved by our medical team
               before it reaches a patient or clinician.
             </p>
@@ -64,10 +64,10 @@ export default function TeamPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <div className="eyebrow mb-5 mx-auto">Our Clinical Review Cycle</div>
-              <h2 className="h-display text-3xl md:text-4xl text-white">
+              <h2 className="h-display text-3xl md:text-4xl text-navy-900">
                 AI-generated. <span className="text-gradient">Doctor-verified.</span>
               </h2>
-              <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm">
+              <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-sm">
                 Every report follows a rigorous review pipeline before delivery.
               </p>
             </div>
@@ -83,11 +83,11 @@ export default function TeamPage() {
                 { n: '04', title: 'Delivered', desc: 'Verified, stamped, physician-ready PDF delivered to client or clinician.' },
               ].map((step, i) => (
                 <div key={step.n} className="relative glass rounded-2xl p-5 text-center">
-                  <div className="w-14 h-14 mx-auto rounded-full bg-teal-500/10 border border-teal-500/40 flex items-center justify-center font-mono text-teal-300 font-bold text-lg">
+                  <div className="w-14 h-14 mx-auto rounded-full bg-teal-500/10 border border-teal-500/40 flex items-center justify-center font-mono text-teal-700 font-bold text-lg">
                     {step.n}
                   </div>
-                  <h4 className="mt-4 font-display text-white font-semibold">{step.title}</h4>
-                  <p className="mt-2 text-xs text-slate-400 leading-relaxed">{step.desc}</p>
+                  <h4 className="mt-4 font-display text-navy-900 font-semibold">{step.title}</h4>
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -99,18 +99,18 @@ export default function TeamPage() {
       <section className="py-16 relative">
         <div className="container-x">
           <div className="text-center mb-14">
-            <div className="text-xs uppercase tracking-widest text-teal-400 font-mono mb-3">
+            <div className="text-xs uppercase tracking-widest text-teal-700 font-mono mb-3">
               Operations & Engineering
             </div>
-            <h2 className="h-display text-3xl md:text-4xl text-white">
+            <h2 className="h-display text-3xl md:text-4xl text-navy-900">
               The <span className="text-gradient">Build Team</span>
             </h2>
-            <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm">
+            <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-sm">
               The people who make the platform run, every single day.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {operations.map((member, i) => (
               <TeamCard key={member.id} member={member} index={i} />
             ))}
@@ -123,12 +123,12 @@ export default function TeamPage() {
         <div className="container-x">
           <div className="relative rounded-3xl overflow-hidden border border-teal-500/30 max-w-4xl mx-auto">
             <div className="absolute inset-0 bg-rainbow-gradient opacity-15" />
-            <div className="absolute inset-0 bg-navy-950/80 backdrop-blur-3xl" />
+            <div className="absolute inset-0 bg-white/80 backdrop-blur-3xl" />
             <div className="relative px-8 md:px-12 py-12 text-center">
-              <h3 className="h-display text-2xl md:text-3xl text-white">
+              <h3 className="h-display text-2xl md:text-3xl text-navy-900">
                 Want to work with us?
               </h3>
-              <p className="mt-4 text-slate-300 max-w-xl mx-auto text-sm">
+              <p className="mt-4 text-slate-600 max-w-xl mx-auto text-sm">
                 We're always looking for clinicians, researchers, and engineers passionate
                 about bringing genomic intelligence to Indian healthcare.
               </p>

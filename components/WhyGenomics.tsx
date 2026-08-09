@@ -38,11 +38,11 @@ export function WhyGenomics() {
       <div className="container-x relative">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="eyebrow mb-5">Why Genomics?</div>
-          <h2 className="h-display text-4xl md:text-6xl text-white leading-tight">
+          <h2 className="h-display text-4xl md:text-6xl text-navy-900 leading-tight">
             Why wait for{' '}
             <span className="text-gradient">symptoms?</span>
           </h2>
-          <p className="mt-6 text-slate-300 text-lg">
+          <p className="mt-6 text-slate-600 text-lg">
             Traditional healthcare is reactive. Radiogenomes AI makes it predictive.
             One test — a lifetime of insights.
           </p>
@@ -63,7 +63,7 @@ export function WhyGenomics() {
               >
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center">
-                    <Icon size={18} className="text-teal-300" aria-hidden="true" />
+                    <Icon size={18} className="text-teal-700" aria-hidden="true" />
                   </div>
                   <span className="text-xs uppercase tracking-widest text-slate-500 font-mono">vs</span>
                 </div>
@@ -71,18 +71,18 @@ export function WhyGenomics() {
                 <div className="grid grid-cols-2 gap-4">
                   {/* Old way */}
                   <div className="rounded-2xl bg-red-500/5 border border-red-500/20 p-4">
-                    <div className="text-[10px] uppercase tracking-widest text-red-400 font-semibold mb-2">
+                    <div className="text-[10px] uppercase tracking-widest text-red-600 font-semibold mb-2">
                       {c.old.label}
                     </div>
-                    <p className="text-sm text-slate-400 leading-relaxed">{c.old.text}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">{c.old.text}</p>
                   </div>
 
                   {/* New way */}
                   <div className="rounded-2xl bg-teal-500/5 border border-teal-500/20 p-4">
-                    <div className="text-[10px] uppercase tracking-widest text-teal-400 font-semibold mb-2">
+                    <div className="text-[10px] uppercase tracking-widest text-teal-700 font-semibold mb-2">
                       {c.new.label}
                     </div>
-                    <p className="text-sm text-slate-300 leading-relaxed">{c.new.text}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">{c.new.text}</p>
                   </div>
                 </div>
               </motion.div>
@@ -98,13 +98,13 @@ export function WhyGenomics() {
           className="relative rounded-3xl overflow-hidden border border-teal-500/30"
         >
           <div className="absolute inset-0 bg-rainbow-gradient opacity-10" />
-          <div className="absolute inset-0 bg-navy-950/80 backdrop-blur-3xl" />
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-3xl" />
           <div className="relative px-8 md:px-16 py-14 text-center">
             <div className="eyebrow mb-6 mx-auto">
               <Sparkles size={14} aria-hidden="true" />
               One Test, A Lifetime of Insights
             </div>
-            <h3 className="h-display text-2xl md:text-4xl text-white max-w-3xl mx-auto leading-tight">
+            <h3 className="h-display text-2xl md:text-4xl text-navy-900 max-w-3xl mx-auto leading-tight">
               3 Critical Questions Your Standard Blood Test{' '}
               <span className="text-gradient">Can't Answer</span>
             </h3>
@@ -118,8 +118,8 @@ export function WhyGenomics() {
                   transition={{ delay: 0.2 + i * 0.1 }}
                   className="glass rounded-2xl p-5 text-left"
                 >
-                  <div className="font-mono text-teal-400 text-xs mb-2">Q{i + 1}</div>
-                  <p className="text-sm text-slate-300 leading-relaxed">{q}</p>
+                  <div className="font-mono text-teal-700 text-xs mb-2">Q{i + 1}</div>
+                  <p className="text-sm text-slate-600 leading-relaxed">{q}</p>
                 </motion.div>
               ))}
             </div>

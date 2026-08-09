@@ -34,7 +34,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="h-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-white"
+            className="h-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-navy-900"
           >
             Decode the{' '}
             <span className="text-gradient">Human Genome</span>{' '}
@@ -45,9 +45,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-6 text-lg text-slate-300 max-w-xl leading-relaxed"
+            className="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed"
           >
-            Radiogenomes AI™ delivers <span className="text-teal-300 font-semibold">17 clinical-grade reports</span> —
+            Radiogenomes AI™ delivers <span className="text-teal-700 font-semibold">17 clinical-grade reports</span> —
             personalized genomic intelligence built for Indian patients, designed for clinicians, and reviewed by senior doctors.
           </motion.p>
 
@@ -67,8 +67,12 @@ export function Hero() {
 
         </div>
 
-        {/* RIGHT - DIGITAL TWIN IMAGE */}
-        <div className="relative h-[500px] lg:h-[680px] z-0 overflow-hidden">
+        {/* RIGHT - DIGITAL TWIN IMAGE
+            The twin artwork is lit for a black ground and blends its own edges
+            to #020617, so it lives in a dark viewport panel rather than sitting
+            directly on the white page. Same treatment as the teleradiology
+            scan panel — the imagery keeps its glow, the page stays light. */}
+        <div className="relative h-[500px] lg:h-[680px] z-0 overflow-hidden scan-panel shadow-[0_24px_60px_-24px_rgba(15,23,42,0.45)]">
           <DigitalTwin />
 
           {/* Digital Twin label */}
@@ -78,7 +82,8 @@ export function Hero() {
             transition={{ delay: 1.2, duration: 0.6 }}
             className="absolute top-2 left-1/2 -translate-x-1/2 hidden md:block z-30"
           >
-            <div className="text-[9px] uppercase tracking-[0.25em] text-teal-400/50 font-mono text-center">
+            {/* Sits on the dark panel, so it keeps the bright teal. */}
+            <div className="text-[9px] uppercase tracking-[0.25em] text-teal-300/70 font-mono text-center">
               RadioGenomes · Digital Twin
             </div>
           </motion.div>
@@ -90,10 +95,10 @@ export function Hero() {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="absolute top-14 right-0 glass rounded-2xl p-4 hidden md:block z-30"
           >
-            <div className="text-[10px] uppercase tracking-widest text-teal-300">
+            <div className="text-[10px] uppercase tracking-widest text-teal-700">
               Doctor-Verified
             </div>
-            <div className="font-mono text-2xl font-bold text-white mt-1">
+            <div className="font-mono text-2xl font-bold text-navy-900 mt-1">
               100%
             </div>
           </motion.div>
@@ -104,12 +109,12 @@ export function Hero() {
             transition={{ delay: 1, duration: 0.6 }}
             className="absolute bottom-16 left-0 glass rounded-2xl p-4 hidden md:block z-30"
           >
-            <div className="text-[10px] uppercase tracking-widest text-teal-300">
+            <div className="text-[10px] uppercase tracking-widest text-teal-700">
               Risk Score
             </div>
             <div className="flex items-baseline gap-2 mt-1">
-              <span className="font-mono text-2xl font-bold text-white">86</span>
-              <span className="text-xs text-emerald-400">FAVORABLE</span>
+              <span className="font-mono text-2xl font-bold text-navy-900">86</span>
+              <span className="text-xs text-emerald-600">FAVORABLE</span>
             </div>
           </motion.div>
 
@@ -119,10 +124,10 @@ export function Hero() {
             transition={{ delay: 1.1, duration: 0.6 }}
             className="absolute bottom-16 right-0 glass rounded-2xl p-3 hidden lg:block z-30"
           >
-            <div className="text-[10px] uppercase tracking-widest text-teal-300">
+            <div className="text-[10px] uppercase tracking-widest text-teal-700">
               Genomic Reports
             </div>
-            <div className="font-mono text-2xl font-bold text-white mt-1">
+            <div className="font-mono text-2xl font-bold text-navy-900 mt-1">
               17
             </div>
           </motion.div>

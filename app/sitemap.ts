@@ -25,6 +25,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/teleradiology`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    },
+    ...['services', 'quality', 'partner', 'faq'].map((slug) => ({
+      url: `${BASE_URL}/teleradiology/${slug}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+    {
       url: `${BASE_URL}/privacy-policy`,
       lastModified,
       changeFrequency: 'yearly',

@@ -1,21 +1,36 @@
 'use client';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
+/**
+ * Two-vertical structure: Genomics (Radiogenomes AI) and Teleradiology both sit
+ * under the ImagingInsight AI brand. `vertical: true` links get an active-state
+ * highlight so visitors always know which vertical they are in.
+ */
 const NAV_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/#about', label: 'About' },
-  { href: '/#reports', label: 'Reports' },
-  { href: '/#how', label: 'How it Works' },
-  { href: '/team', label: 'Team' },
-  { href: '/contact', label: 'Contact Us' },
+  { href: '/', label: 'Genomics', vertical: true },
+  { href: '/teleradiology', label: 'Teleradiology', vertical: true },
+  { href: '/team', label: 'Team', vertical: false },
+  { href: '/#about', label: 'About', vertical: false },
+  { href: '/contact', label: 'Contact', vertical: false },
 ];
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  const isTele = pathname?.startsWith('/teleradiology') ?? false;
+
+  /** Genomics is "active" on the home page only; Teleradiology on its subtree. */
+  const isActive = (href: string) =>
+    href === '/teleradiology' ? isTele : href === '/' ? pathname === '/' : false;
+
+  /** Demo CTA should land on the form of whichever vertical you are viewing. */
+  const ctaHref = isTele ? '/teleradiology#contact' : '/contact';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -57,11 +72,11 @@ export function Navigation() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-navy-950/80 backdrop-blur-xl border-b border-white/5'
+          ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200'
           : 'bg-transparent'
       }`}
     >
-      <div className="container-x flex items-center justify-between py-4">
+      <div className="container-wide flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3 group">
           {/* Icon-only crop of the logo — shows just the colorful AI/brain/DNA mark */}
           <div
@@ -77,34 +92,44 @@ export function Navigation() {
           <div className="leading-tight">
             <div className="font-display font-bold text-base sm:text-xl tracking-tight">
               <span className="logo-shimmer">Imaging</span>
-              <span className="text-teal-400">Insight</span>{' '}
+              <span className="text-teal-700">Insight</span>{' '}
               <span className="ai-pulse">AI</span>
             </div>
-            <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-slate-400 mt-0.5 hidden sm:block">
-              Radiogenomes AI™ Platform
+            <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-slate-600 mt-0.5 hidden sm:block">
+              {isTele ? 'Teleradiology Services' : 'Radiogenomes AI™ Platform'}
             </div>
           </div>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
-          {NAV_LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm text-slate-300 hover:text-teal-300 transition-colors relative group"
-            >
-              {l.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-px bg-teal-400 group-hover:w-full transition-all" />
-            </a>
-          ))}
+          {NAV_LINKS.map((l) => {
+            const active = isActive(l.href);
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                aria-current={active ? 'page' : undefined}
+                className={`text-sm transition-colors relative group ${
+                  active ? 'text-teal-700 font-medium' : 'text-slate-600 hover:text-teal-700'
+                }`}
+              >
+                {l.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-teal-400 transition-all ${
+                    active ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </a>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href="#contact" className="btn-primary text-sm py-2 px-5 hidden sm:inline-flex">
+          <a href={ctaHref} className="btn-primary text-sm py-2 px-5 hidden sm:inline-flex">
             Request Demo
           </a>
           <button
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-navy-900 p-2"
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
           >
@@ -114,18 +139,29 @@ export function Navigation() {
       </div>
 
       {open && (
-        <div ref={menuRef} role="dialog" aria-label="Mobile navigation" className="lg:hidden bg-navy-950/95 backdrop-blur-xl border-t border-white/5">
-          <div className="container-x py-6 flex flex-col gap-4">
-            {NAV_LINKS.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="text-slate-200 hover:text-teal-300"
-              >
-                {l.label}
-              </a>
-            ))}
+        <div ref={menuRef} role="dialog" aria-label="Mobile navigation" className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200">
+          <div className="container-wide py-6 flex flex-col gap-4">
+            {NAV_LINKS.map((l) => {
+              const active = isActive(l.href);
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? 'page' : undefined}
+                  className={active ? 'text-teal-700 font-medium' : 'text-slate-700 hover:text-teal-700'}
+                >
+                  {l.label}
+                </a>
+              );
+            })}
+            <a
+              href={ctaHref}
+              onClick={() => setOpen(false)}
+              className="btn-primary text-sm py-2 px-5 mt-2 sm:hidden"
+            >
+              Request Demo
+            </a>
           </div>
         </div>
       )}
